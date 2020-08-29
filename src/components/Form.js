@@ -11,7 +11,7 @@ function Form(props) {
        <div className="flexContainer">
            <label ><i className="zmdi zmdi-puzzle-piece"></i>
            </label>
-           <input type="text"  placeholder={`${index}: Enter possible option`}  onChange={props.handleOnchange} name="possible_choices" id={index}/>
+           <input type="text"  placeholder={`${index + 1}: Enter possible option`}  onChange={props.handleOnchange} name="possible_choices" id={index}/>
            <button type="button" id={index} onClick={props.removeInput} style={btn_style}><i
            className="zmdi zmdi-delete"></i></button>
        </div>
