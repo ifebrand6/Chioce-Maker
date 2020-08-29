@@ -55,8 +55,10 @@
     background-color: #a7c4a8;
     z-index: 9; 
     margin-bottom: 20px;
+    box-shadow: 0 2px 40px rgba(14,30,37,.16);
+    border-radius: 8px;
+
     }
-    
     /* Add styles to the form container */
     .form-container {
     max-width: 300px;

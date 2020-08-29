@@ -36,7 +36,7 @@ function Form(props) {
                 <h4>Possible Choices</h4>
                 {arr}
                 <div className="form-group">
-                        <button onClick={props.addNewInput} type="button">Add more Option <i className="zmdi zmdi-plus-circle"></i>
+                        <button onClick={props.addNewInput} type="button">Add more choices <i className="zmdi zmdi-plus-circle"></i>
                         </button>
                     </div>
                     <div className="form-group form-button">
