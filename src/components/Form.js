@@ -6,12 +6,12 @@ function Form(props) {
         borderBottom: '1px solid #999',
         fontSize: 'x-large'
     }
-    const arr = props.data.possible_question.map((dd,index)=>{
+    const arr = props.data.possible_choices.map((dd,index)=>{
        return <div className="form-group" key={index}>
        <div className="flexContainer">
            <label ><i className="zmdi zmdi-puzzle-piece"></i>
            </label>
-           <input type="text"  placeholder={`${index}: Enter possible option`}  onChange={props.handleOnchange} name="possible_question" id={index}/>
+           <input type="text"  placeholder={`${index}: Enter possible option`}  onChange={props.handleOnchange} name="possible_choices" id={index}/>
            <button type="button" id={index} onClick={props.removeInput} style={btn_style}><i
            className="zmdi zmdi-delete"></i></button>
        </div>
@@ -47,7 +47,7 @@ function Form(props) {
         </div>
         <div className="signup-image">
             <figure><img src="images/signup-image.jpg" alt="happy"/></figure>
-            <a href="https://www.github.com/ifebrand6" className="signup-image-link">Visit my other works</a>
+            <a href="https://www.github.com/ifebrand6" target="blank" className="signup-image-link">Visit my other works</a>
         </div>
     </div>
     )

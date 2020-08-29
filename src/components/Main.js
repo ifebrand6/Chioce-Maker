@@ -10,7 +10,7 @@ class Main extends React.Component {
         super(props);
             this.state = {
                 question: "This is a random dummy question",
-                possible_question: ["1st dummy choice!", "2nd dummy choice!"],
+                possible_choices: ["1st dummy choice!", "2nd dummy choice!"],
                 submitted: false,
                 most_frequently_ask_question: ''
             }
@@ -22,14 +22,14 @@ class Main extends React.Component {
             this.setState({
                 [name]: value
             })
-            } else if (name === 'possible_question') {
+            } else if (name === 'possible_choices') {
                 let id = e.target.id
-                let items = [...this.state.possible_question];
+                let items = [...this.state.possible_choices];
                 let item = {...items[id]};
                 item = value;
                 items[id] = item;
                 this.setState({
-                    possible_question: items
+                    possible_choices: items
                 });
                 
             }
@@ -38,22 +38,22 @@ class Main extends React.Component {
     }
     addNewInput = ()=> {
         this.setState({ 
-            possible_question: this.state.possible_question.concat(['Random Dummy Choice'])
+            possible_choices: this.state.possible_choices.concat(['Random Dummy Choice'])
             })
         
     }
     removeInput = (e)=> {
-        var array = [...this.state.possible_question]; 
+        var array = [...this.state.possible_choices]; 
         var index = e.target.id
         if (index !== -1) {
             array.splice(index, 1);
-            this.setState({possible_question: array});
+            this.setState({possible_choices: array});
         }
     }
     resetQuestion = ()=>{
         this.setState({
             question: "This is a dummy question",
-            possible_question: ["1st dummy ans", "2nd Second ans "],
+            possible_choices: ["1st dummy ans", "2nd Second ans "],
             submitted: false
         })
     }
@@ -61,7 +61,7 @@ class Main extends React.Component {
         e.preventDefault()
        tracker.push(this.state.question.trim().toUpperCase())
        localStorage.setItem('question', JSON.stringify(tracker))
-       if (this.state.possible_question.length > 1) {
+       if (this.state.possible_choices.length > 1) {
         this.setState({
             submitted: true,
             most_frequently_ask_question: getMostPopularQuestion(JSON.parse(localStorage.getItem('question')))
@@ -96,10 +96,8 @@ class Main extends React.Component {
             <section className="signup">
                 <div className="container">
                           {evalutor}
-                        {/* {popularityEvalutor} */}
                     </div>
              </section>
-             {/* <button className="open-button" onClick={this.openForm}>See Questions Popularity</button> */}
              <div id="settings-trigger" onClick={this.openForm}><i className="zmdi zmdi-comment-list"></i>
 </div>
             <div className="chat-popup" id="myForm">
