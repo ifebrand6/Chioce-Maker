@@ -4,20 +4,29 @@ export default function Result(props) {
         let item  = props.data.possible_question[Math.floor(Math.random() * props.data.possible_question.length)];
         const [option, setOption] = useState(item);
     return (
-        <div>
-        <hr/>
-            <div id="section_for_question">
-                <h3>{props.data.question}</h3>
-                <ul>
-                    {props.data.possible_question.map((element,key)=>{
-                        return <li key={key}>{element}</li>
-                    })}
-                </ul>
-                <p>Ans: {option}</p>
-                <button onClick={() => setOption(props.data.possible_question[Math.floor(Math.random() * props.data.possible_question.length)])}>get another choice</button>
-                <button onClick={props.resetQuestion}>Ask diff question</button>
+            <div className="signin-content">
+                <div className="signin-image">
+                    <figure><img src="images/signin-image.jpg" alt="sing up "/></figure>
+                    <a href="https://www.github.com/ifebrand6" className="signup-image-link">Do more by viewing other works!</a>
+                </div>
+                <div className="signin-form">
+                    <h2>Choice Result </h2>
+                    <div>
+                        <h1 className="form-title">{props.data.question} ?</h1>
+                    </div>
+                    <div>
+                    <ul>
+                            {props.data.possible_question.map((element,key)=>{
+                                return <li key={key}><h4>{element}</h4></li>
+                            })}
+                        </ul>
+                        <p>Choosen option: {option}</p>
+                    </div>
+                    <div className="social-login">
+                        <span className="social-label"><button type="button" onClick={() => setOption(props.data.possible_question[Math.floor(Math.random() * props.data.possible_question.length)])}>Get another choice</button></span>
+                        <span className="social-label"><button onClick={props.resetQuestion}>Ask another Question</button></span>
+                    </div>
+                </div>
             </div>
-            <hr/>
-        </div>
     )
 };

@@ -1,0 +1,92 @@
+/* Button used to open the chat form - fixed at the bottom of the page */
+.open-button {
+    background: #6dabe4;
+    color: #fff;
+    border-bottom: none;
+    width: auto;
+    padding: 15px 39px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 23px;
+    right: 28px;
+    }
+    #settings-trigger {
+        position: fixed;
+        bottom: 40px;
+        right: 30px;
+        height: 45px;
+        width: 45px;
+        background: #6dabe4;
+        z-index: 99;
+        -webkit-box-shadow: 0px 0px 31px 6px rgba(0, 0, 0, 0.17);
+        box-shadow: 0px 0px 31px 6px rgba(0, 0, 0, 0.17);
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        border-radius: 100%;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-delay: 1s;
+        animation-delay: 1s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        }
+        #settings-trigger i {
+            color: #ffffff;
+            font-size: 1rem;
+            line-height: 1rem;
+         }
+
+    /* The popup chat - hidden by default */
+    .chat-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    background-color: #a7c4a8;
+    z-index: 9; 
+    margin-bottom: 20px;
+    }
+    
+    /* Add styles to the form container */
+    .form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+    }
+    
+   
+    
+    /* Set a style for the submit/send button */
+   
+    
+    /* Add a red background color to the cancel button */
+    .form-container .cancel {
+        display: inline-block;
+        background: #6dabe4;
+        color: #fff;
+        border-bottom: none;
+        width: auto;
+        /* padding: 15px 39px; */
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -o-border-radius: 5px;
+        -ms-border-radius: 5px;
+        margin-top: 25px;
+        cursor: pointer;
+    }
+    
+    /* Add some hover effects to buttons */
+    .form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+    }

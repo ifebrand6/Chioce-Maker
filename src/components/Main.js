@@ -9,8 +9,8 @@ class Main extends React.Component {
     constructor(props) {
         super(props);
             this.state = {
-                question: "This is a dummy question",
-                possible_question: ["1st dummy ans", "2nd Second ans "],
+                question: "This is a random dummy question",
+                possible_question: ["1st dummy choice!", "2nd dummy choice!"],
                 submitted: false,
                 most_frequently_ask_question: ''
             }
@@ -38,7 +38,7 @@ class Main extends React.Component {
     }
     addNewInput = ()=> {
         this.setState({ 
-            possible_question: this.state.possible_question.concat(['new option'])
+            possible_question: this.state.possible_question.concat(['Random Dummy Choice'])
             })
         
     }
@@ -78,13 +78,39 @@ class Main extends React.Component {
             })
        }
     }
+     openForm() {
+        document.getElementById("myForm").style.display = "block";
+        document.getElementById("settings-trigger").style.display = "none";
+        }
+        
+         closeForm() {
+        document.getElementById("myForm").style.display = "none";
+        document.getElementById("settings-trigger").style.display = "flex";
+
+        }
     render() { 
         const evalutor = this.state.submitted ? <Result data={this.state} resetQuestion={this.resetQuestion}/> : <Form data={this.state} handleOnSubmit={this.handleOnSubmit} handleOnchange={this.handleOnchange} addNewInput={this.addNewInput} removeInput={this.removeInput} />
         const popularityEvalutor = (localStorage.length >= 1) ? <PopularityTracker most_frequently_ask_question={this.state.most_frequently_ask_question}/> : <div>NO Most Popular question yet</div>
         return ( 
-            <div>
-                {evalutor}
+            <div className="main">
+            <section className="signup">
+                <div className="container">
+                          {evalutor}
+                        {/* {popularityEvalutor} */}
+                    </div>
+             </section>
+             {/* <button className="open-button" onClick={this.openForm}>See Questions Popularity</button> */}
+             <div id="settings-trigger" onClick={this.openForm}><i className="zmdi zmdi-comment-list"></i>
+</div>
+            <div className="chat-popup" id="myForm">
+            <form action="/action_page.php" className="form-container">
+                <h5>Popular Question Report</h5>
+
                 {popularityEvalutor}
+
+                <button type="button" className="btn cancel" onClick={this.closeForm}>X</button>
+            </form>
+            </div>
             </div>
          );
     }
