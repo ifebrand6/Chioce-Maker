@@ -17,10 +17,11 @@ class Main extends React.Component {
     }
     handleOnchange = (e)=>{
         let value = e.target.value
+        let foramttedValue  = value.replace('?', "")
         let name = e.target.name
         if (name === 'question') {
             this.setState({
-                [name]: value
+                [name]: foramttedValue
             })
             } else if (name === 'possible_choices') {
                 let id = e.target.id

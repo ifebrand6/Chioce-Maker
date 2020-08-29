@@ -1,10 +1,9 @@
 import React from 'react'
 function date() {
-    const date = new Date;
-    let time = date.getFullYear()
-    return time
+    let date = (new Date()).getFullYear();
+    return date
 }
-const time = date()
+const time = date();
 function Footer(params) {
     return (
         <footer>
